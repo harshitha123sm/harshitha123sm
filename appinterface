@@ -1,0 +1,43 @@
+import logo from './logo.svg';
+import './App.css'; 
+import { useState } from 'react';
+
+
+function App() {
+
+ const [task,setTask]=useState("");
+ const [list,setList]=useState([]);
+ 
+ const addTask=()=>{
+   if(task!==""){
+       setList([...list,task]);
+       setTask("");
+   }
+ };
+
+ const DeleteTask=(index)=>{
+  const newList=list.filter((_,i)=>i!==index);
+  setList(newList);
+ }
+   
+  return (
+     <div style={{textAlign:"center"}}>
+       <h1>ToDo List</h1>
+        <input type="text" value={task} onChange={(e)=>setTask(e.target.value)} placeholder="Add Task" />
+        <button onClick={addTask}>Add Task</button>
+        <ul>
+           {list.map((item,index)=>(
+             <li key={index}>
+              {item}
+              <button onClick={()=>DeleteTask(index)}>Delete</button>
+              </li> 
+
+
+           ))}
+         </ul> 
+     </div>
+  );
+  
+}
+
+export default App;
