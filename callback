@@ -1,0 +1,35 @@
+1. Callback Practice
+
+Write a function processNumber(num, callback)
+
+It should double the number
+Then pass result to callback
+Callback should print the result
+ 2. Promise Practice
+
+Create a Promise that:
+
+Returns "Success" if a number is greater than 10
+Otherwise returns "Fail"
+Handle result using .then() and .catch()
+ 3. Async/Await Practice
+
+ Convert this Promise code into async/await:
+
+getData().then((res) => {
+  console.log(res);
+});
+ 4. Error Handling
+
+ Write an async function:
+
+Calls a Promise
+If error occurs → show "Something went wrong"
+Use try...catch
+ 5. Fetch API Practice 
+
+ Use fetch() to:
+
+Get data from:
+https://jsonplaceholder.typicode.com/posts
+Print only the titles in console
